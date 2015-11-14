@@ -1,6 +1,6 @@
 <?php 
 
-class Kecamatan extends CI_Controller {
+class Backoffice_kecamatan extends CI_Controller {
         
 	public function __construct()
 	{
@@ -13,7 +13,15 @@ class Kecamatan extends CI_Controller {
 		$this->load->model('model_kecamatan');
 	}
 
-	public function index()
+	public function show()
+	{
+		$data['kecamatan'] = $this->model_kecamatan->get_kecamatan();
+		$this->load->view('template_backoffice/header');
+		$this->load->view('content_backoffice/kecamatan/kecamatan', $data);
+		$this->load->view('template_backoffice/footer');
+	}
+
+	public function json()
 	{
 		$data = $this->model_kecamatan->get_kecamatan();	
 		$this->output->set_content_type('application/json')->set_output(json_encode($data));

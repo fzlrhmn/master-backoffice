@@ -2,14 +2,14 @@
 
 class Model_kelurahan extends CI_Model {
 
-	public function get_kelurahan($id_kelurahan = false)
+	public function get_kelurahan($id_master_kelurahan = false)
 	{
-		$this->db->select('kelurahan.no_kecamatan, kelurahan.kelurahan, kelurahan.nomor, kecamatan.kecamatan');
-		$this->db->from('kelurahan');
-		if ($id_kelurahan!=false) {
-			$this->db->where('id', $id_kelurahan);
+		$this->db->select('master_kelurahan.id_kecamatan, master_kelurahan.nama_kelurahan, master_kelurahan.id_kelurahan, master_kecamatan.nama_kecamatan');
+		$this->db->from('master_kelurahan');
+		if ($id_master_kelurahan!=false) {
+			$this->db->where('id', $id_master_kelurahan);
 		}
-		$this->db->join('kecamatan', 'kecamatan.nomor = kelurahan.no_kecamatan', 'left');
+		$this->db->join('master_kecamatan', 'master_kecamatan.nomor = master_kelurahan.id_kecamatan', 'left');
 		$query = $this->db->get();
 		$result = $query->result_array();
 		return $result;
@@ -17,11 +17,12 @@ class Model_kelurahan extends CI_Model {
 
 	public function get_kelurahan_by_kecamatan($id_kecamatan = false)
 	{
-		$this->db->select('no_kecamatan, kelurahan, nomor');
-		$this->db->from('kelurahan');
+		$this->db->select('master_kelurahan.id_kecamatan, master_kelurahan.id_kelurahan, master_kelurahan.nama_kelurahan, master_kecamatan.nama_kecamatan');
+		$this->db->from('master_kelurahan');
 		if ($id_kecamatan!=false) {
-			$this->db->where('no_kecamatan', $id_kecamatan);
+			$this->db->where('master_kecamatan.id_kecamatan', $id_kecamatan);
 		}
+		$this->db->join('master_kecamatan', 'master_kecamatan.id_kecamatan = master_kelurahan.id_kecamatan', 'left');
 		$query = $this->db->get();
 		$result = $query->result_array();
 		return $result;

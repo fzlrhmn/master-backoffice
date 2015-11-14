@@ -1,6 +1,6 @@
 <?php 
 
-class Kelurahan extends CI_Controller {
+class Backoffice_kelurahan extends CI_Controller {
         
 	public function __construct()
 	{
@@ -11,6 +11,20 @@ class Kelurahan extends CI_Controller {
 		header('Access-Control-Allow-Origin: *');
     	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 		$this->load->model('model_kelurahan');
+	}
+
+	public function show()
+	{
+		$data['kelurahan'] = $this->model_kelurahan->get_kelurahan_by_kecamatan($id_kecamatan=false);
+		$this->load->view('template_backoffice/header');
+		$this->load->view('content_backoffice/kelurahan/kelurahan', $data);
+		$this->load->view('template_backoffice/footer');
+	}
+
+	public function json($id_kecamatan=false)
+	{
+		$data = $this->model_kelurahan->get_kelurahan_by_kecamatan($id_kecamatan);
+		$this->output->set_content_type('application/json')->set_output(json_encode($data));
 	}
 
 	public function get_kelurahan($id_kelurahan=false)

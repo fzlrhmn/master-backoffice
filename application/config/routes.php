@@ -51,9 +51,7 @@ $route['logout'] 						= "login/logout";
 |
 */
 $route['maps'] 							= "maps/index";
-$route['maps/tematik'] 					= "maps/tematik";
-$route['maps/mobile'] 					= "maps/mobile_maps";
-$route['maps/mobile/v2'] 				= "maps/mobile_maps_v2";
+// $route['maps/tematik'] 					= "maps/tematik";
 
 /*
 | 
@@ -67,9 +65,21 @@ $route['user'] 						= 'user/index';
 $route['user/(:num)'] 				= 'user/index/$1';
 $route['user/delete/(:num)'] 		= 'user/delete/$1';
 
-$route['perusahaan/delete/(:num)'] 	= 'perusahaan/delete/$1';
+/*
+| 
+| ROUTING KECAMATAN
+|
+*/
+$route['kecamatan/show'] 			= "backoffice_kecamatan/show";
+$route['kecamatan/json'] 			= "backoffice_kecamatan/json";
 
-
+/*
+| 
+| ROUTING KELURAHAN
+|
+*/
+$route['kelurahan/show'] 			= "backoffice_kelurahan/show";
+$route['kelurahan/json'] 			= "backoffice_kelurahan/json";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

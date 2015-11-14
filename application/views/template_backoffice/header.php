@@ -71,9 +71,9 @@
                         <li class="nav-parent">
                             <a href=""><i class="icon-note"></i><span data-translate="forms">Data Master </span><span class="fa arrow"></span></a>
                             <ul class="children collapse">
-                                <li><a href="<?php echo base_url('index.php/master/kabupaten') ?>"> Master Kabupaten</a></li>
-                                <li><a href="<?php echo base_url('index.php/master/kecamatan') ?>"> Master Kecamatan</a></li>
-                                <li><a href="<?php echo base_url('index.php/master/kelurahan') ?>"> Master Kelurahan</a></li>
+                                <!-- <li><a href="<?php echo base_url('index.php/master/kabupaten') ?>"> Master Kabupaten</a></li> -->
+                                <li><a href="<?php echo base_url('index.php/kecamatan/show') ?>"> Master Kecamatan</a></li>
+                                <li><a href="<?php echo base_url('index.php/kelurahan/show') ?>"> Master Kelurahan</a></li>
                             </ul>
                         </li>
                         <li class="nav-parent">
