@@ -18,30 +18,6 @@
                     <div class="col-md-6">
                       <?php echo validation_errors(); ?>
                       <form role="form" role="form" method="post" action="<?php echo base_url('index.php/user/submit') ?>">
-                        <!-- <div class="form-group">
-                          <div class="row">
-                            <div class="col-md-12">
-                              <label>Status</label>
-                              <select class="form-control" name="is_admin" id="status">
-                                <option value="1">ADMINISTRATOR</option>
-                                <option value="0">KABUPATEN</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div> -->
-                        <div class="form-group" id="kabupaten" style="display:none;">
-                          <div class="row">
-                            <div class="col-md-12">
-                              <label>Kabupaten</label>
-                              <select class="form-control" name="id_kabupaten" id="id_kabupaten">
-                                <option value="0"> -- Pilih Kabupaten -- </option>
-                                <?php foreach ($kabupaten as $item): ?>
-                                  <option value="<?php echo $item['id_kabupaten'] ?>"><?php echo $item['nama_kabupaten'] ?></option>
-                                <?php endforeach ?>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
                         <div class="form-group">
                           <div class="row">
                             <div class="col-md-12">

@@ -9,13 +9,11 @@ class User extends CI_Controller {
 			redirect(base_url('index.php/home'));
 		}
 		$this->load->model('model_user');
-		$this->load->model('model_kabupaten');
 	}
 
 	public function index($id_user=false)
 	{
 		$data['users'] = $this->model_user->get($id_user);
-		$data['kabupaten'] 		= $this->model_kabupaten->get_kabupaten();
 
 		if ($id_user!=false) {
 			$this->load->view('template_backoffice/header');
@@ -31,7 +29,6 @@ class User extends CI_Controller {
 
 	public function add()
 	{
-		$data['kabupaten'] 		= $this->model_kabupaten->get_kabupaten();
 		$this->load->view('template_backoffice/header');
 		$this->load->view('content_backoffice/user/add_user', $data);
 		$this->load->view('template_backoffice/footer');
@@ -77,7 +74,6 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['users'] = $this->model_user->get($this->input->post('id_user'));
-			$data['kabupaten'] 		= $this->model_kabupaten->get_kabupaten();
 
 			$this->load->view('template_backoffice/header');
 			$this->load->view('content_backoffice/user/edit_user', $data);

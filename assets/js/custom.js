@@ -220,8 +220,8 @@
 		        ],
 	});
 
-	$('<div class="btn-group"><button type="button" class="btn btn-info btn-square dropdown-toggle" data-toggle="dropdown"><i class="fa fa-spinner fa-spin" id="loading"></i> Cetak <span class="caret"></span></button><span class="dropdown-arrow"></span><ul class="dropdown-menu" role="menu"><li><a href="javascript:void(0)" id="print_pdf">Cetak PDF</a></li><li><a href="javascript:void(0)" id="print_excel">Cetak Excel</a></li></ul></div>').appendTo('div#table_filter');
-	$('#loading').hide();
+	// $('<div class="btn-group"><button type="button" class="btn btn-info btn-square dropdown-toggle" data-toggle="dropdown"><i class="fa fa-spinner fa-spin" id="loading"></i> Cetak <span class="caret"></span></button><span class="dropdown-arrow"></span><ul class="dropdown-menu" role="menu"><li><a href="javascript:void(0)" id="print_pdf">Cetak PDF</a></li><li><a href="javascript:void(0)" id="print_excel">Cetak Excel</a></li></ul></div>').appendTo('div#table_filter');
+	// $('#loading').hide();
 
 	// $("#print_pdf").click(function() {
 	//     var rowTable = [];
@@ -266,3 +266,25 @@
 
 	//     window.open( root + 'index.php/perusahaan/print/excel/' + params_perusahaan );
 	// });
+
+	var table = $('#master_table').DataTable({
+		"searchHighlight": true,
+		"lengthMenu": [ [25, 50, 100, -1], [25, 50, 100, "Semua"] ],
+		"language": {
+		            "sProcessing":   "Sedang memproses...",
+		            // "sLengthMenu":   "Tampilkan _MENU_ entri",
+		            "sZeroRecords":  "Tidak ditemukan data yang sesuai",
+		            "sInfo":         "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+		            "sInfoEmpty":    "Menampilkan 0 sampai 0 dari 0 entri",
+		            "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+		            "sInfoPostFix":  "",
+		            // "sSearch":       "Cari:",
+		            "sUrl":          "",
+		            "oPaginate": {
+		                "sFirst":    "Pertama",
+		                "sPrevious": "Sebelumnya",
+		                "sNext":     "Selanjutnya",
+		                "sLast":     "Terakhir"
+		            }
+		        },
+	});

@@ -17,7 +17,7 @@
                 <div class="panel-header">
                 </div>
                 <div class="panel-content">
-                    <button class="btn btn-sm btn-info" id="check_noty">Check</button>
+                    <button class="btn btn-sm btn-info" id="check_noty">Check notif</button>
                     <!-- <div id="noty"></div> -->
                 </div>
             </div>

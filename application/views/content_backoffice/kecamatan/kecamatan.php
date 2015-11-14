@@ -19,7 +19,7 @@
                 <div class="panel-header">
                 </div>
                 <div class="panel-content">
-                    <table class="table table-striped table-bordered table-hover" id="">
+                    <table class="table table-striped table-bordered table-hover" id="master_table">
                     <thead>
                     	<tr>
                     		<th>
